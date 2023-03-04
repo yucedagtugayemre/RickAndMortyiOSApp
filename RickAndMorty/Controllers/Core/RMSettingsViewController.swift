@@ -8,7 +8,7 @@
 import UIKit
 
 /// Controller to show various app options and settings
-class RMSettingsViewController: UIViewController {
+final class RMSettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +16,4 @@ class RMSettingsViewController: UIViewController {
         title = "Settings"
     }
     
-
-
 }
