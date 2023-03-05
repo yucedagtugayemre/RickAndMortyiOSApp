@@ -32,6 +32,7 @@
 		ABB01A8829B3E49700175C71 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB01A8729B3E49700175C71 /* Extensions.swift */; };
 		ABB01A8A29B3EAEA00175C71 /* RMCharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB01A8929B3EAEA00175C71 /* RMCharacterCollectionViewCell.swift */; };
 		ABB5C84C29B489DB000CFFDD /* RMCharacterCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB5C84B29B489DB000CFFDD /* RMCharacterCollectionViewCellViewModel.swift */; };
+		ABB5C84E29B4B452000CFFDD /* Builders.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB5C84D29B4B452000CFFDD /* Builders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		ABB01A8729B3E49700175C71 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ABB01A8929B3EAEA00175C71 /* RMCharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		ABB5C84B29B489DB000CFFDD /* RMCharacterCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		ABB5C84D29B4B452000CFFDD /* Builders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builders.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				AB9B3E5429B29068009CF0C0 /* Assets.xcassets */,
 				AB9B3E5629B29068009CF0C0 /* LaunchScreen.storyboard */,
 				ABB01A8729B3E49700175C71 /* Extensions.swift */,
+				ABB5C84D29B4B452000CFFDD /* Builders.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				AB9B3E5029B29068009CF0C0 /* RMTabBarViewController.swift in Sources */,
 				ABB01A8A29B3EAEA00175C71 /* RMCharacterCollectionViewCell.swift in Sources */,
 				AB9B3E7229B293A0009CF0C0 /* RMEpisodeViewController.swift in Sources */,
+				ABB5C84E29B4B452000CFFDD /* Builders.swift in Sources */,
 				AB9B3E4C29B29068009CF0C0 /* AppDelegate.swift in Sources */,
 				AB9B3E4E29B29068009CF0C0 /* SceneDelegate.swift in Sources */,
 				AB9B3E7429B293B6009CF0C0 /* RMSettingsViewController.swift in Sources */,
