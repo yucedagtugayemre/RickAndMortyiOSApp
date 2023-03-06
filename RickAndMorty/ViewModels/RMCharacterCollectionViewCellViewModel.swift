@@ -11,9 +11,7 @@ final class RMCharacterCollectionViewCellViewModel {
     public let characterName: String
     private let characterStatus: RMCharacterStatus
     private let characterImageUrl: URL?
-    
-    
-    
+
     // MARK: - Init
     
     init(
