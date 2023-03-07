@@ -9,7 +9,10 @@ import UIKit
 /// View for single character info
 final class RMCharacterDetailView: UIView {
     
-    private var collectionView: UICollectionView?
+    public  var collectionView: UICollectionView?
+    
+    private let viewModel: RMCharacterDetailViewViewModel
+    
     
     private let spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: .large)
@@ -19,11 +22,12 @@ final class RMCharacterDetailView: UIView {
     }()
     
     // MARK: - Init
-
-    override init(frame: CGRect) {
+    
+    init(frame: CGRect, viewModel: RMCharacterDetailViewViewModel) {
+        self.viewModel = viewModel
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .systemPurple
+        backgroundColor = .systemBackground
         let collectionView = createCollectionView()
         self.collectionView = collectionView
         addSubViews(collectionView,spinner)
@@ -42,23 +46,34 @@ final class RMCharacterDetailView: UIView {
             spinner.centerXAnchor.constraint(equalTo: centerXAnchor),
             spinner.centerYAnchor.constraint(equalTo: centerYAnchor),
             
-           collectionView.topAnchor.constraint(equalTo: topAnchor),
-           collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
-           collectionView.leftAnchor.constraint(equalTo: leftAnchor),
-           collectionView.rightAnchor.constraint(equalTo: rightAnchor),
+            collectionView.topAnchor.constraint(equalTo: topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            collectionView.leftAnchor.constraint(equalTo: leftAnchor),
+            collectionView.rightAnchor.constraint(equalTo: rightAnchor),
         ])
     }
-
+    
     private func createCollectionView() -> UICollectionView {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
             return self.createSection(for: sectionIndex)
         }
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }
     
     private func createSection(for sectionIndex: Int) -> NSCollectionLayoutSection {
+        let sectionType = viewModel.sections
         
+        switch sectionType[sectionIndex] {
+        case .photo:
+            return viewModel.createPhotoSectionLayout()
+        case .information:
+            return viewModel.createInfoSectionLayout()
+        case .episodes:
+            return viewModel.createEpisodeSectionLayout()
+        }   
     }
+
 }
