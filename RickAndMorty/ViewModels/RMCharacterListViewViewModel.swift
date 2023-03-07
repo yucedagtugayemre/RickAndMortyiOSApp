@@ -63,8 +63,7 @@ final class RMCharacterListViewViewModel: NSObject{
         guard !isLoadingMoreCharacters else {
             return
         }
-        
-        print("Fetching more characters.")
+    
         isLoadingMoreCharacters = true
 
         guard let request = RMRequest(url: url) else {
@@ -92,7 +91,7 @@ final class RMCharacterListViewViewModel: NSObject{
                    
                     storngSelf.characters.append(contentsOf: moreResults)
                     
-                    print(String("ViewModel Count: \(storngSelf.characters.count)"))
+                    
 
                     DispatchQueue.main.async {
                         storngSelf.delegate?.didLoadMorCharacters(with: indexPathsToAdd)
@@ -181,10 +180,11 @@ extension RMCharacterListViewViewModel: UIScrollViewDelegate {
         
         Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { [weak self] t in
             let offset = scrollView.contentOffset.y
-            let totalContentHeight = scrollView.contentSize.height
-            let totalScrollViewFixedHeight = scrollView.frame.size.height
             
-            if  (offset >= (totalContentHeight - totalScrollViewFixedHeight - 120)) {
+            let totalContentHeight = scrollView.contentSize.height
+
+            let totalScrollViewFixedHeight = scrollView.frame.size.height
+                        if  (offset >= (totalContentHeight - totalScrollViewFixedHeight - 120)) {
                 self?.fetchAdditionalCharacters(url: url)
             }
             t.invalidate()
