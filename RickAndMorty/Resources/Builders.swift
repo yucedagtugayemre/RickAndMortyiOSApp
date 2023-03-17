@@ -17,3 +17,10 @@ extension RMCharacterCollectionViewCellViewModel {
         return viewModel
     }
 }
+
+extension RMCharacterEpisodeCollectionViewCellViewModel {
+    static func make(with dataUrl: URL?) -> RMCharacterEpisodeCollectionViewCellViewModel {
+        let viewModel = RMCharacterEpisodeCollectionViewCellViewModel(episodeDataUrl: dataUrl)
+        return viewModel
+    }
+}
