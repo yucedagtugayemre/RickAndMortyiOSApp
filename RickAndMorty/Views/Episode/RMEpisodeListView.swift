@@ -95,7 +95,6 @@ extension RMEpisodeListView: RMEpisodeListViewViewModelDelegate {
     }
     
     func didSelectEpisode(_ episode: RMEpisode) {
-       // delegate?.rmEpisodeListView(self, didSelectCharacter: episode)
         delegate?.rmEpisodeListView(self, didSelectEpisode: episode)
     }
 }
